@@ -1,342 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="U1sP41phjeounM4nFcyfDCjb-hiLzf1s7QtlFviCk04" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>GigaGone - Free Disk Space Analyzer for Windows</title>
-
-    <meta name="description" content="GigaGone is a free Windows disk space analyzer that helps you find large files and folders and safely clean up disk space.">
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b0f14;
-            color: #f5f7fa;
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1050px;
-            margin: auto;
-        }
-
-        header {
-            padding: 28px 0;
-            border-bottom: 1px solid #222a33;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 90px 20px 70px;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 7vw, 76px);
-            line-height: 1;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            color: #55d6be;
-        }
-
-        .hero p {
-            max-width: 700px;
-            margin: 0 auto 35px;
-            color: #aeb8c4;
-            font-size: 19px;
-        }
-
-        .download {
-            display: inline-block;
-            padding: 16px 30px;
-            background: #55d6be;
-            color: #07100e;
-            text-decoration: none;
-            font-weight: 800;
-            border-radius: 10px;
-            font-size: 17px;
-        }
-
-        .download:hover {
-            opacity: 0.88;
-        }
-
-        .small {
-            margin-top: 15px;
-            color: #7f8a96;
-            font-size: 14px;
-        }
-
-        section {
-            padding: 55px 0;
-        }
-
-        h2 {
-            font-size: 32px;
-            margin-bottom: 25px;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 18px;
-        }
-
-        .card {
-            background: #121820;
-            border: 1px solid #222c36;
-            border-radius: 14px;
-            padding: 25px;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            font-size: 19px;
-        }
-
-        .card p {
-            color: #aeb8c4;
-            font-size: 15px;
-        }
-
-        .notice {
-            background: #121820;
-            border: 1px solid #293541;
-            border-radius: 14px;
-            padding: 25px;
-            margin-top: 25px;
-        }
-
-        .notice p {
-            color: #b7c0ca;
-        }
-
-        .warning {
-            border-left: 4px solid #e0b35a;
-        }
-
-        .about {
-            color: #b7c0ca;
-            max-width: 800px;
-        }
-
-        footer {
-            border-top: 1px solid #222a33;
-            padding: 35px 0;
-            color: #7f8a96;
-            font-size: 14px;
-            text-align: center;
-        }
-
-        a {
-            color: #55d6be;
-        }
-
-        @media (max-width: 600px) {
-            .hero {
-                padding-top: 60px;
-            }
-
-            .hero p {
-                font-size: 17px;
-            }
-
-            h2 {
-                font-size: 27px;
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GigaGone - Free Disk Space Analyzer for Windows</title>
+<meta name="description" content="GigaGone is a free disk space analyzer for Windows 10 and 11. See what is filling your C: drive, find large files and clear temp files. Free for personal use.">
+<link rel="canonical" href="https://hadifroy.github.io/GigaGone/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GigaGone - Free Disk Space Analyzer for Windows">
+<meta property="og:description" content="See what is using space on your C: drive, find large files and clear temp files. Free for personal use.">
+<meta property="og:url" content="https://hadifroy.github.io/GigaGone/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GigaGone","applicationCategory":"UtilitiesApplication","operatingSystem":"Windows 10, Windows 11","description":"Free disk space analyzer for Windows. Shows what is using space on a drive, lists large files and clears temp files.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"downloadUrl":"https://github.com/hadifroy/GigaGone/releases/latest","url":"https://hadifroy.github.io/GigaGone/"}
+</script>
+<style>
+:root{--bg:#12141c;--panel:#1c2030;--text:#eef0f6;--muted:#a3a9bd;--accent:#00a86b}
+@media (prefers-color-scheme:light){:root{--bg:#f4f6fb;--panel:#fff;--text:#161a26;--muted:#566079}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 "Segoe UI",system-ui,sans-serif}
+main{max-width:900px;margin:0 auto;padding:28px 20px 56px}
+h1{font-size:clamp(30px,6vw,52px);line-height:1.1;margin:36px 0 14px;letter-spacing:-.02em}
+h2{font-size:25px;margin:48px 0 16px}
+p{margin:0 0 14px}
+.muted{color:var(--muted)}
+.brand{font-weight:700;font-size:22px}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:10px;font-size:18px}
+.cta:focus-visible{outline:3px solid #0096ff;outline-offset:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.grid div,details{background:var(--panel);border-radius:12px;padding:16px 18px}
+.grid b{display:block;margin-bottom:4px}
+details{margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+details p{margin:10px 0 0;color:var(--muted)}
+.safe{background:var(--panel);border-left:5px solid var(--accent);border-radius:8px;padding:16px 20px}
+footer{margin-top:52px;padding-top:20px;border-top:1px solid rgba(128,128,150,.3);font-size:14px;color:var(--muted)}
+</style>
 </head>
-
 <body>
-
-<header>
-    <div class="container">
-        <div class="logo">GigaGone</div>
-    </div>
-</header>
-
 <main>
+<div class="brand">GigaGone</div>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Find What's<br><span>Filling Your Drive.</span></h1>
+<h1>Find what is filling your C: drive. Then make it gone.</h1>
+<p class="muted">GigaGone is a free disk space analyzer for Windows 10 and 11. It scans your drive and shows every folder and file as colored blocks, so the biggest space hog is easy to spot. You choose what to remove.</p>
+<a class="cta" href="https://github.com/hadifroy/GigaGone/releases/latest">Download GigaGone for Windows</a>
+<p class="muted" style="margin-top:12px;font-size:14px">Free for personal use. Windows 10 and 11, 64-bit. Downloads as a zip file: extract it, then run GigaGone.exe.</p>
 
-            <p>
-                GigaGone is a free disk space analyzer for Windows
-                that helps you quickly understand where your storage is going.
-            </p>
+<h2>What GigaGone does</h2>
+<div class="grid">
+<div><b>Shows what is using space</b><span class="muted">A free-space ring and a block map of your drive. Bigger block means bigger folder.</span></div>
+<div><b>Finds large files on Windows</b><span class="muted">A list of files over 10 MB, biggest first, with instant search by name or type.</span></div>
+<div><b>Folder sizes</b><span class="muted">Every folder with its size and its share of the drive.</span></div>
+<div><b>Clears temp files</b><span class="muted">Shows how much temporary junk you have, then clears it only after you confirm.</span></div>
+</div>
 
-            <a class="download"
-               href="https://github.com/hadifroy/GigaGone/releases"
-               target="_blank">
-                Download for Windows
-            </a>
+<h2>How to free up space on your C: drive</h2>
+<p class="muted">1. Extract the zip and open GigaGone.exe. 2. Pick your drive and click Scan. 3. Look at the biggest folders and files. 4. Tick files you no longer need and send them to the Recycle Bin.</p>
 
-            <div class="small">
-                Free • Windows • Version 1.0
-            </div>
-        </div>
-    </section>
+<h2>Questions</h2>
+<details><summary>Why is my C: drive full?</summary><p>Common causes are large downloads, games, videos, old backups and temporary files. GigaGone scans the drive and shows which folders take the most space, so you can see the cause instead of guessing.</p></details>
+<details><summary>How do I find large files on Windows?</summary><p>Scan the drive in GigaGone and open the Largest Files tab. Files over 10 MB are listed biggest first, and you can search by name or file type.</p></details>
+<details><summary>Is GigaGone safe to use?</summary><p>Scanning only reads your drive. Files you delete from the Largest Files list go to the Recycle Bin, so you can restore them. Windows and Program Files are protected from deletion. The Temp Cleaner deletes temporary files permanently, and only after you confirm.</p></details>
+<details><summary>Why does Windows say "Windows protected your PC"?</summary><p>GigaGone is a new app without a paid publisher certificate, so Windows SmartScreen shows this screen for new files. Click More info, then Run anyway.</p></details>
+<details><summary>Why do some antivirus tools flag it?</summary><p>New unsigned apps are sometimes flagged by generic heuristics. On our last VirusTotal check, 1 of 64 engines (ClamAV, a generic detection) flagged the zip and 63 did not. You can scan the zip yourself at virustotal.com before running it.</p></details>
+<details><summary>Why does GigaGone ask for administrator permission?</summary><p>So it can read folders that Windows normally hides, and show their real sizes.</p></details>
+<details><summary>Is GigaGone free?</summary><p>Yes, it is free for personal use.</p></details>
 
-    <section>
-        <div class="container">
-            <h2>What GigaGone Does</h2>
+<div class="safe" style="margin-top:40px"><b>You stay in control.</b> GigaGone shows what is using your space. Nothing is deleted unless you choose it.</div>
 
-            <div class="features">
-
-                <div class="card">
-                    <h3>Drive Scanning</h3>
-                    <p>
-                        Scan your Windows drive and see where your storage space is being used.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Visual Treemap</h3>
-                    <p>
-                        Explore storage usage with a nested colored treemap that makes large areas easy to spot.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Folder Sizes</h3>
-                    <p>
-                        Browse folders and see how much space each folder is consuming.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Largest Files</h3>
-                    <p>
-                        Find the biggest files on your drive and search through the results.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Safe Delete</h3>
-                    <p>
-                        Delete selected files safely to the Windows Recycle Bin.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Temporary File Cleaner</h3>
-                    <p>
-                        Remove supported temporary files to help recover unnecessary disk space.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Protected Locations</h3>
-                    <p>
-                        Important Windows and Program Files locations are protected from normal deletion.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Dark Interface</h3>
-                    <p>
-                        A clean dark interface designed for comfortable everyday use.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-
-            <h2>Windows SmartScreen</h2>
-
-            <div class="notice warning">
-                <p>
-                    Windows may sometimes show a Microsoft Defender SmartScreen
-                    warning because GigaGone is not currently digitally code-signed.
-                    If you trust the download, select <strong>More info</strong>
-                    and then <strong>Run anyway</strong>.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-
-            <h2>VirusTotal Scan</h2>
-
-            <div class="notice">
-                <p>
-                    A VirusTotal scan currently shows 1 detection out of 64 engines.
-                    The detection is from ClamAV as the generic heuristic
-                    <strong>Win.Malware.Aotera</strong>.
-                    This is disclosed here for transparency.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-
-            <h2>About GigaGone</h2>
-
-            <p class="about">
-                GigaGone is a free Windows utility designed to help users
-                understand disk usage, locate large files and folders,
-                and safely remove unnecessary files.
-            </p>
-
-            <div class="notice">
-                <p>
-                    GigaGone does not claim to provide duplicate-file detection,
-                    cloud storage management, or real-time protection.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-
-            <h2>License</h2>
-
-            <p class="about">
-                GigaGone is free for personal use.
-                You may not resell the software, redistribute it under another name,
-                or reverse engineer the software.
-            </p>
-
-        </div>
-    </section>
-
+<footer>&copy; 2026 GigaGone. All rights reserved. Free for personal use. Copying, reselling, redistributing under another name, or reverse engineering is not allowed.</footer>
 </main>
-
-<footer>
-    <div class="container">
-        © 2026 [YOUR NAME] — GigaGone
-    </div>
-</footer>
-
 </body>
 </html>
